@@ -19,5 +19,5 @@ Testing Windows user mode SDK w/ Python3...<br>
 
 ## References
   - [RoboPeak Mini USB DisplayUSB Interface Protocol Specification](http://www.robopeak.com/data/doc/rpusbdisp/RPUD03-rpusbdisp_interface_protocol-enUS.1.0.pdf) Robopeak USB display protocol PDF.
-  - [SeeedWioTerminal UserMode SDK](https://wiki.seeedstudio.com/Wio-Terminal-HMI-Usermode-SDK/) SeeedStudio Wio Terminal.
+  - [SeeedWioTerminal UserMode SDK](https://wiki.seeedstudio.com/Wio-Terminal-HMI-Usermode-SDK/) SeeedStudio Wio Terminal SDK.
 
