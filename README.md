@@ -12,7 +12,7 @@ __Windows setup && Python test__ <br>
 Testing Windows user mode SDK w/ Python3...<br>
 <img src="pic/WioTerminaImgTest802D.jpg" width=600/> <img src="pic/WioTerminalImgTest.jpg" width=300/> <br>
 
-__USB capture for the fill 3bytes command__<br>
+__USB capture for the 3bytes rpusbdisp-FILL command__<br>
 <img src="pic/WioFill_WireShark.jpg" width=1024/> <br>
 <br><br>
 
