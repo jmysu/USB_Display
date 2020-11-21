@@ -16,7 +16,7 @@ __USB capture for the 3bytes rpusbdisp-FILL command__<br>
 <img src="pic/WioFill_WireShark.jpg" width=1024/> <br>
 <br><br>
 
-__Test for GIF animation__ w/o DMA, around 8fps...<br>
+__Test for GIF animation__ SAMD51@200MHz w/o DMA, around 8fps...<br>
 gif from GIPHY:https://giphy.com/explore/donald-trump <br>
 <img src="pic/TrumpTennis320.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate<br>
