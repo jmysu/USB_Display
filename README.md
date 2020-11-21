@@ -16,7 +16,9 @@ __USB capture for the 3bytes rpusbdisp-FILL command__<br>
 <img src="pic/WioFill_WireShark.jpg" width=1024/> <br>
 <br><br>
 
-
+__Test for GIF animation__ w/o DMA, around 8fps...<br>
+<img src="pic/TrumpTennis320.gif" width=320/> <br>
+<br><br>
 
 ## References
   - [RoboPeak Mini USB DisplayUSB Interface Protocol Specification](http://www.robopeak.com/data/doc/rpusbdisp/RPUD03-rpusbdisp_interface_protocol-enUS.1.0.pdf) Robopeak USB display protocol PDF.
