@@ -17,8 +17,8 @@ __USB capture for the 3bytes rpusbdisp-FILL command__<br>
 <br><br>
 
 __Test for GIF animation__ w/o DMA, around 8fps...<br>
-https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate
 <img src="pic/TrumpTennis320.gif" width=320/> <br>
+https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate<br>
 <br><br>
 
 ## References
