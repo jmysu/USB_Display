@@ -21,7 +21,7 @@ gif from GIPHY:https://giphy.com/explore/donald-trump <br>
 <img src="pic/TrumpTennis320.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate<br>
 <br><br>
-<img src="pic/WioTerminalSlideShoe.gif" width=320/> <br>
+<img src="pic/WioTerminalSlideShow.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSdSlideShow<br>
 <br><br>
 
