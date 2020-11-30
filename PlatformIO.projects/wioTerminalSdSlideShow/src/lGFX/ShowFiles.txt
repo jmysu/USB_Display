@@ -1,0 +1,91 @@
+#include <Arduino.h>
+
+#include "SPI.h"
+#include "SdFat.h"
+
+const int chipSelect = SDCARD_SS_PIN;
+// File system on SD Card
+SdFat sd;
+
+#include <LovyanGFX.hpp>
+static LGFX lcd;
+
+enum lcdT {LCD_FILE_NAME=0, LCD_FILE};
+
+void lcdShowFiles(const char *foldername, lcdT lcd_type) {
+ SdFile dir;
+ SdFile file;
+ 
+ //const char foldername[] = "/TFT";
+
+  if (!dir.open(foldername)){
+    Serial.println("open folder failed");
+    }
+  else {
+    Serial.print(foldername);
+    Serial.println("------------");
+    while (file.openNext(&dir, O_RDONLY)) {
+        char fn[32];
+        file.getName(fn, 32);
+        Serial.print(fn);
+        int iLen = strlen(fn);
+        for (int i=0; i<(32-iLen); i++)
+            Serial.print(" ");
+        Serial.println(file.fileSize());
+       
+        if (lcd_type == LCD_FILE_NAME)
+            lcd.println(fn);
+        else {
+            String sF = fn;
+            //if (sF.endsWith(".jpg"))  lcd.drawJpg(file);
+            }
+        file.close();    
+        }
+    }
+   dir.close();
+}
+
+void setup(void)
+{
+  lcd.init();
+
+  Serial.begin(115200);
+  // Wait for USB Serial
+  while (!Serial) {
+    SysCall::yield();
+    }
+  delay(1000);
+
+  lcd.setColorDepth(24);
+  lcd.setColor(TFT_WHITE);
+  lcd.startWrite();
+  lcd.setAddrWindow(0, 0, lcd.width(), lcd.height());
+  for (int y = 0; y < lcd.height(); ++y) {
+    for (int x = 0; x < lcd.width(); ++x)  {
+      lcd.writeColor( lcd.color888(x << 1, x + y, y << 1), 1);
+        }
+    }
+  lcd.print("LCD show files...\n");
+  lcd.endWrite();
+
+  // Initialize at the highest speed supported by the board that is
+  // not over 50 MHz. Try a lower speed if SPI errors occur.
+  if (!sd.begin(chipSelect, SD_SCK_MHZ(50))) {
+    sd.initErrorHalt();
+    }
+  
+  sd.ls(LS_R);  
+
+  lcdShowFiles("/TFT", LCD_FILE_NAME);
+}
+
+void loop(void)
+{
+    if (millis()%5000 == 0) {
+        lcd.clear();
+        lcd.setCursor(16,16);
+        lcdShowFiles("/TFT", LCD_FILE_NAME);
+        }
+
+   //delay(1000);
+}
