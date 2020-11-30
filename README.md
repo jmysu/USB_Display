@@ -21,6 +21,9 @@ gif from GIPHY:https://giphy.com/explore/donald-trump <br>
 <img src="pic/TrumpTennis320.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate<br>
 <br><br>
+<img src="pic/WioTerminalSlideShoe.gif" width=320/> <br>
+https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSdSlideShow<br>
+<br><br>
 
 ## References
   - [RoboPeak Mini USB DisplayUSB Interface Protocol Specification](http://www.robopeak.com/data/doc/rpusbdisp/RPUD03-rpusbdisp_interface_protocol-enUS.1.0.pdf) Robopeak USB display protocol PDF.
