@@ -31,4 +31,4 @@ https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSd
   - [SeeedWioTerminal UserMode SDK](https://wiki.seeedstudio.com/Wio-Terminal-HMI-Usermode-SDK/) SeeedStudio Wio Terminal SDK.
   - [SeeedWioTerminal USB Display](https://github.com/Seeed-Studio/Seeed_Arduino_USBDISP) Github repository.
   - [Arduino GIF Animator](https://github.com/bitbank2/AnimatedGIF) A lightweight Arduino GIF decoder.
-  - [LovYanGFX] (https://github.com/lovyan03/LovyanGFX) Another nice library for Arduino TFT.
+  - [LovYanGFX](https://github.com/lovyan03/LovyanGFX) Another nice library for Arduino TFT.
