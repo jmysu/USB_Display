@@ -22,7 +22,7 @@ gif from GIPHY:https://giphy.com/explore/donald-trump <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate<br>
 <br><br>
 __Have fun with SD card slide show (jpg,png,gif)__<br>
-<img src="pic/WioTerminalSlideShow1201.gif" width=320/> <br>
+<img src="pic/WioTerminalSdSlideShow1201.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSdSlideShow<br>
 <br><br>
 
