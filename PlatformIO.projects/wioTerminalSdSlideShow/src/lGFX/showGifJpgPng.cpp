@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <SD/Seeed_SD.h>
+#include <FreeStack.h>
 #include <LovyanGFX.hpp>
 LGFX lcd;
 
@@ -117,5 +118,14 @@ void loop(void)
 
   File root = SD.open("/TFT");
   showFiles(root, 250); //pause 250ms for each file
+  Serial.print(F("\n---------------------------------------FreeStack: "));
+  int iFree = FreeStack();
+  Serial.println(iFree);
   root.close();
+  
+  if (iFree < 10000) {
+    Serial.println("Low freestack reset starting...");
+    delay(100);
+    NVIC_SystemReset();
+    }
 }
