@@ -21,6 +21,7 @@ gif from GIPHY:https://giphy.com/explore/donald-trump <br>
 <img src="pic/TrumpTennis320.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalGifAnimate<br>
 <br><br>
+__Have fun with SD card slide show (jpg,png,gif)__
 <img src="pic/WioTerminalSlideShow.gif" width=320/> <br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSdSlideShow<br>
 <br><br>
