@@ -4,6 +4,14 @@
 #include <LovyanGFX.hpp>
 LGFX lcd;
 
+#define NOTE_C4  262
+#define NOTE_D4  294
+#define NOTE_E4  330
+#define NOTE_F4  349
+#define NOTE_G4  392
+#define NOTE_A4  440
+#define NOTE_B4  494
+#define NOTE_C5  523
 
 /*
 void lcdShowFiles(const char *foldername) {
@@ -47,9 +55,19 @@ extern int gifPlay( char* gifPath );
 void showFiles(File dir, int dly)
 {
   int16_t w=0,h=0,centerX=0,centerY=0;
-  
+  File entry;
+
   while (true) {
-    File entry =  dir.openNextFile();
+    //Serial.print(F("\t FreeStack: "));
+    int iFree = FreeStack();
+    //Serial.println(iFree);
+    if (iFree < 10000) {
+      Serial.println("\nLow freestack reset starting...");
+      delay(100);
+      NVIC_SystemReset();
+      }
+
+    entry =  dir.openNextFile();
     if (! entry) {
         break;
         }
@@ -58,7 +76,7 @@ void showFiles(File dir, int dly)
     if ( GetImageSize(entry, &w, &h)) {
       if (w < lcd.width()) centerX = (lcd.width()-w) >>1;
       if (h < lcd.height()) centerY = (lcd.height()-h) >>1;  
-      Serial.printf("(%4dx%4d) ", w, h);
+      Serial.printf("(%4dx%4d) [%6d]", w, h, iFree);
       }
 
     lcd.clear();
@@ -108,6 +126,15 @@ void setup(void)
   SD.begin(SDCARD_SS_PIN, SDCARD_SPI, 50000000);
  
   delay(1000);
+  /*
+  pinMode(WIO_BUZZER, OUTPUT);
+  tone(WIO_BUZZER, NOTE_C4, 300);
+  tone(WIO_BUZZER, NOTE_E4, 300);
+  tone(WIO_BUZZER, NOTE_G4, 300);
+  tone(WIO_BUZZER, NOTE_C5, 1000);
+  delay(2000);
+  noTone(WIO_BUZZER);
+  */
 }
 
 void loop(void)
@@ -115,17 +142,11 @@ void loop(void)
   
   //lcd.drawJpgFile(SD, filename, random(-20,20), random(-20, 20));
   //lcdShowFiles("/TFT");
-
   File root = SD.open("/TFT");
-  showFiles(root, 250); //pause 250ms for each file
-  Serial.print(F("\n---------------------------------------FreeStack: "));
-  int iFree = FreeStack();
-  Serial.println(iFree);
-  root.close();
-  
-  if (iFree < 10000) {
-    Serial.println("Low freestack reset starting...");
-    delay(100);
-    NVIC_SystemReset();
+  if (root) {
+    showFiles(root, 250); //pause 250ms for each file
+    root.close();
     }
+  else
+    Serial.println("root folder open failed!");  
 }

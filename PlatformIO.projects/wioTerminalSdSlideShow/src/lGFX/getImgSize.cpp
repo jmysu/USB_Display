@@ -19,18 +19,19 @@ bool GetImageSize(File f, int16_t *x, int16_t *y)
   // We'll read those 12 bytes at buf+2...buf+14, i.e. overwriting the existing buf.
   if (buf[0]==0xFF && buf[1]==0xD8 && buf[2]==0xFF && buf[3]==0xE0 && buf[6]=='J' && buf[7]=='F' && buf[8]=='I' && buf[9]=='F')
   { long pos=2;
-    while (buf[2]==0xFF)
-    { if (buf[3]==0xC0 || buf[3]==0xC1 || buf[3]==0xC2 || buf[3]==0xC3 || buf[3]==0xC9 || buf[3]==0xCA || buf[3]==0xCB) break;
+    while (buf[2]==0xFF){ 
+      if (buf[3]==0xC0 || buf[3]==0xC1 || buf[3]==0xC2 || buf[3]==0xC3 || buf[3]==0xC9 || buf[3]==0xCA || buf[3]==0xCB) 
+        break;
       pos += 2+(buf[4]<<8)+buf[5];
-      if (pos+12>len) break;
+      if (pos+12>len) 
+        break;
       f.seek(pos); f.read(buf+2,12);
-    }
+      }
   }
 
   
-
   // JPEG: (first two bytes of buf are first two bytes of the jpeg file; rest of buf is the DCT frame
-  if (buf[0]==0xFF && buf[1]==0xD8 && buf[2]==0xFF)
+  if (buf[0]==0xFF && buf[1]==0xD8 && buf[2]==0xFF && buf[3] == 0xC0) //check 0xFFC0
   { *y = (buf[7]<<8) + buf[8];
     *x = (buf[9]<<8) + buf[10];
     //cout << *x << endl;
