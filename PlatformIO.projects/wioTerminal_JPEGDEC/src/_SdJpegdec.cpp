@@ -58,7 +58,7 @@ int32_t mySeek(JPEGFILE *handle, int32_t position) {
 */
 
 //
-// spi convert for ILI9341 w/ DMA
+// swap rb bytes in buffer
 //
 //void ioconvert(uint16_t* in, uint16_t* out, int w, int h)
 void swapBuffer(uint16_t *in, uint16_t *out, int len) {
@@ -76,10 +76,14 @@ void JPEGDraw(JPEGDRAW *pDraw) {
     //tft1.writeRect(pDraw->x, pDraw->y, pDraw->iWidth, pDraw->iHeight, pDraw->pPixels);  //GFX
     //tft.pushImage(pDraw->x, pDraw->y, pDraw->iWidth, pDraw->iHeight, pDraw->pPixels);  //TFT_eSPI
 
+    /*
     int16_t pixels = (pDraw->iWidth) * (pDraw->iHeight);
     uint16_t outBuf[pixels];
     swapBuffer(pDraw->pPixels, outBuf, pixels);
     lgfxTFT.pushImage(pDraw->x, pDraw->y, pDraw->iWidth, pDraw->iHeight, outBuf);  //LOVYANGFX
+    */
+    //lgfxTFT.setSwapBytes(true); //Enable swapbytes for Little-Endien
+    lgfxTFT.pushImage(pDraw->x, pDraw->y, pDraw->iWidth, pDraw->iHeight, pDraw->pPixels);  //LOVYANGFX
                                                                                    //lgfxTFT.drawRect(pDraw->x, pDraw->y, pDraw->iWidth, pDraw->iHeight, *pDraw->pPixels);
 }
 /*
@@ -134,6 +138,7 @@ void setup() {
   */
     lgfxTFT.init();
     lgfxTFT.setColorDepth(16);
+    //lgfxTFT.setSwapBytes(true); //!!!Important!!! Enable swapbytes for Little-Endien!
     lgfxTFT.setColor(TFT_WHITE);
     lgfxTFT.startWrite();
     lgfxTFT.setAddrWindow(0, 0, lgfxTFT.width(), lgfxTFT.height());
@@ -187,6 +192,9 @@ void loop() {
                 //lgfxTFT.clear();
                 int iTime = millis();
                 jpeg.open((const char *)name, myOpen, myClose, myRead, mySeek, JPEGDraw);
+                //JPEGDEC PixelType default to Little-Endian!
+                //jpeg.setPixelType(BIG_ENDIAN_PIXELS);
+                jpeg.setPixelType(1);
                 jpeg.decode(offsetX, offsetY, 0);
                 jpeg.close();
                 
