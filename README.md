@@ -26,7 +26,7 @@ __Have fun with SD card slide show (jpg,png,gif)__<br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSdSlideShow<br>
 <br><br>
 
-__SPI TFT bulk write(TFT_eSPI) vs. DMA(lovyanGFX)__ SAMD51@200MHz/SPI-write@60MHz...<br>
+__JPEG Decode, SPI TFT bulk write(TFT_eSPI) vs. DMA(lovyanGFX)__ SAMD51@200MHz/SPI-write@60MHz...<br>
 506ms:374ms@320x480, 321ms:175ms@320x240<br> 
 <img src="pic/TFT_DMA_Performance.jpg" width=640> <img src="pic/SdJpegDecDMA1212.gif" width=320>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminal_JPEGDEC<br>      
