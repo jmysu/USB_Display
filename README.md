@@ -27,8 +27,8 @@ https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSd
 <br><br>
 
 __SPI TFT bulk write(TFT_eSPI) vs. DMA(lovyanGFX)__ SAMD51@200MHz...<br>
-320x240 
-<img src="pic/TFT_DMA_Performance.jpg>
+4ms:375ms @320x240 
+<img src="pic/TFT_DMA_Performance.jpg">
           
 
 
