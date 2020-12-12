@@ -29,8 +29,8 @@ https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSd
 __SPI TFT bulk write(TFT_eSPI) vs. DMA(lovyanGFX)__ SAMD51@200MHz...<br>
 506ms:374ms@320x480, 321ms:175ms@320x240<br> 
 <img src="pic/TFT_DMA_Performance.jpg" width=640> <img src="pic/SdJpegDecDMA1212.gif" width=320>
-          
-
+https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminal_JPEGDEC<br>          
+<br><br>
 
 ## References
   - [RoboPeak Mini USB DisplayUSB Interface Protocol Specification](http://www.robopeak.com/data/doc/rpusbdisp/RPUD03-rpusbdisp_interface_protocol-enUS.1.0.pdf) Robopeak USB display protocol PDF.
