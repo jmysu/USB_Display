@@ -39,3 +39,4 @@ __SPI TFT bulk write(TFT_eSPI) vs. DMA(lovyanGFX)__ SAMD51@200MHz...<br>
   - [Arduino GIF Animator](https://github.com/bitbank2/AnimatedGIF) A lightweight Arduino GIF decoder.
   - [LovYanGFX](https://github.com/lovyan03/LovyanGFX) Another nice library for Arduino TFT.
   - [AnimatedGif](https://github.com/bitbank2/AnimatedGIF) A lightweight Arduino GIF decoder for playing animated files.
+  - [JPEGDEC](https://github.com/bitbank2/JPEGDEC) Another optimized JPEG Decoder for Arduino.
