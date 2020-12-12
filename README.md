@@ -26,6 +26,12 @@ __Have fun with SD card slide show (jpg,png,gif)__<br>
 https://github.com/jmysu/USB_Display/tree/main/PlatformIO.projects/wioTerminalSdSlideShow<br>
 <br><br>
 
+__SPI TFT bulk write(TFT_eSPI) vs. DMA(lovyanGFX)__ SAMD51@200MHz...<br>
+320x240 
+<img src="pic/TFT_DMA_Performance.jpg>
+          
+
+
 ## References
   - [RoboPeak Mini USB DisplayUSB Interface Protocol Specification](http://www.robopeak.com/data/doc/rpusbdisp/RPUD03-rpusbdisp_interface_protocol-enUS.1.0.pdf) Robopeak USB display protocol PDF.
   - [SeeedWioTerminal UserMode SDK](https://wiki.seeedstudio.com/Wio-Terminal-HMI-Usermode-SDK/) SeeedStudio Wio Terminal SDK.
